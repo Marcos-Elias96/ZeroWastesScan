@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generar Código QR - ZeroWaste</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center;">Escanea el código QR para verificar si tu producto es reciclable</h1>
+
+    <!-- Contenedor para el código QR -->
+    <div id="qrcode" style="text-align: center; margin-top: 20px; margin-bottom: 50px;"></div>
+
+    <script>
+        // URL de la página de verificación (cambia la URL a la página de verificación correcta)
+        const url = 'https://www.google.com'; // Para pruebas, usa esta URL
+
+        window.onload = function () {
+            // Generar el código QR y dibujarlo en el canvas dentro del div #qrcode
+            QRCode.toCanvas(document.getElementById('qrcode'), url, function (error) {
+                if (error) {
+                    console.error('Error generando el QR:', error);
+                } else {
+                    console.log('Código QR generado!');
+                }
+            });
+        };
+    </script>
+</body>
+</html>

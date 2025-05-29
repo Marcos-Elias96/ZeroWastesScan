@@ -1,0 +1,73 @@
+/* Encabezado y pie con verde fuerte */
+.navbar, footer {
+  background-color: #1b4d1b !important; /* verde oscuro fuerte */
+}
+
+/* Texto general en cursiva legible */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: #f0f0f0; /* blanco grisáceo */
+  background-color: #f9faf9; /* fondo claro opcional */
+  margin: 0;
+}
+
+/* Links en navbar con estilo cursiva */
+.navbar-brand, .nav-link {
+  font-style: italic;
+  font-weight: 600;
+  color: #d4d4d4 !important; /* blanco suave */
+  text-decoration: none;
+}
+
+/* Hover para enlaces en navbar */
+.navbar-brand:hover, .nav-link:hover {
+  color: #a8d5a8 !important; /* verde claro */
+}
+
+/* Texto en pie de página */
+footer {
+  color: #d4d4d4;
+  font-style: italic;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Títulos con cursiva y color verde oscuro */
+h1, h2, h3, h4, h5, h6 {
+  font-style: italic;
+  font-weight: 700;
+  color: #184d18;
+}
+
+/* Botones (opcional para que combinen) */
+.btn-success, .btn-primary {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Inputs con cursiva (opcional) */
+input, textarea, select {
+  font-style: italic;
+}
+
+/* Ajuste responsive básico */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 10px; /* Reducir el relleno */
+  }
+
+  .carousel-item img {
+    height: 200px; /* Ajustar el tamaño de las imágenes en el carrusel */
+  }
+
+  /* Otros ajustes específicos para pantallas pequeñas */
+}

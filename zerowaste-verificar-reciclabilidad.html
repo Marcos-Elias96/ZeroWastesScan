@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verificar Reciclabilidad - ZeroWaste</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    label, input {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 1.1em;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #resultado {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Verifica si tu producto es reciclable</h1>
+
+    <p>Escanea el código QR de un producto y verifica si es reciclable en nuestra plataforma.</p>
+
+    <form id="verificarForm">
+      <label for="producto">Ingresa el nombre del producto:</label>
+      <input type="text" id="producto" name="producto" required placeholder="Ejemplo: Plástico, Vidrio, Cartón" />
+      <button type="submit">Verificar</button>
+    </form>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    // Lista de productos reciclables
+    const productosReciclables = ['plastico', 'papel', 'vidrio', 'carton', 'aluminio'];
+
+    document.getElementById('verificarForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const producto = document.getElementById('producto').value.toLowerCase();
+
+      const resultado = document.getElementById('resultado');
+      if (productosReciclables.includes(producto)) {
+        resultado.innerHTML = `<p>¡Sí! El producto "${producto}" es reciclable.</p>`;
+        resultado.style.backgroundColor = '#d4edda'; // Verde claro
+        resultado.style.color = '#155724'; // Texto verde
+      } else {
+        resultado.innerHTML = `<p>El producto "${producto}" no es reciclable actualmente.</p>`;
+        resultado.style.backgroundColor = '#f8d7da'; // Rojo claro
+        resultado.style.color = '#721c24'; // Texto rojo
+      }
+    });
+  </script>
+
+</body>
+</html>
